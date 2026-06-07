@@ -2,485 +2,485 @@
   {
     "kod": "188A1",
     "morfologie": "Argyropelecus1",
-    "cox1": "ano",
     "foto": "file1_image1.jpeg",
     "blast_urceni": "Argyropelecus aculeatus",
     "blast_podobnost": 0.99,
     "rad": "Stomiiformes",
     "celed": "Sternoptychidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188A2",
     "morfologie": "Argyropelecus1",
-    "cox1": "ano",
     "foto": "file1_image2.jpeg",
     "blast_urceni": "Argyropelecus aculeatus",
     "blast_podobnost": 0.99,
     "rad": "Stomiiformes",
     "celed": "Sternoptychidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188A3",
     "morfologie": "Argyropelecus1",
-    "cox1": "ano",
     "foto": "file1_image3.jpeg",
     "blast_urceni": "Argyropelecus aculeatus",
     "blast_podobnost": 0.999,
     "rad": "Stomiiformes",
     "celed": "Sternoptychidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188A4",
     "morfologie": "Argyropelecus1",
-    "cox1": "ano",
     "foto": "file1_image4.jpeg",
     "blast_urceni": "Argyropelecus aculeatus",
     "blast_podobnost": 0.99,
     "rad": "Stomiiformes",
     "celed": "Sternoptychidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188B2",
     "morfologie": "Argyropelecus2",
-    "cox1": "ano",
     "foto": "file1_image5.jpeg",
     "blast_urceni": "Argyropelecus gigas",
     "blast_podobnost": 0.998,
     "rad": "Stomiiformes",
     "celed": "Sternoptychidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188B3",
     "morfologie": "Argyropelecus2",
-    "cox1": "ano",
     "foto": "file1_image6.jpeg",
     "blast_urceni": "Argyropelecus gigas",
     "blast_podobnost": 1,
     "rad": "Stomiiformes",
     "celed": "Sternoptychidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188B4",
     "morfologie": "Argyropelecus2",
-    "cox1": "ano",
     "foto": "file1_image7.jpeg",
     "blast_urceni": "Argyropelecus gigas",
     "blast_podobnost": 0.998,
     "rad": "Stomiiformes",
     "celed": "Sternoptychidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188B5",
     "morfologie": "Argyropelecus2",
-    "cox1": "ano",
     "foto": "file1_image8.jpeg",
     "blast_urceni": "Argyropelecus gigas",
     "blast_podobnost": 0.997,
     "rad": "Stomiiformes",
     "celed": "Sternoptychidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188B8",
     "morfologie": "Sternoptychidae",
-    "cox1": "ano",
     "foto": "file1_image9.jpeg",
     "blast_urceni": "Argyropelecus gigas",
     "blast_podobnost": 0.99,
     "rad": "Stomiiformes",
     "celed": "Sternoptychidae",
-    "fylogenetika": "ne – kontaminace"
+    "fylogenetika": "ne – kontaminace",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188B9",
     "morfologie": "Sternoptychidae",
-    "cox1": "ano",
     "foto": "file1_image10.jpeg",
     "blast_urceni": "Diaphus rafinesqui",
     "blast_podobnost": 0.92,
     "rad": "Myctophiformes",
     "celed": "Myctophidae",
-    "fylogenetika": "ne – kontaminace"
+    "fylogenetika": "ne – kontaminace",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188C1",
     "morfologie": "Sternoptychidae",
-    "cox1": "ano",
     "foto": "file1_image11.jpeg",
     "blast_urceni": "Benthosema suborbitale",
     "blast_podobnost": 0.99,
     "rad": "Myctophiformes",
     "celed": "Myctophidae",
-    "fylogenetika": "ne – kontaminace"
+    "fylogenetika": "ne – kontaminace",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188C2",
     "morfologie": "Sternoptychidae",
-    "cox1": "ano",
     "foto": "file1_image12.jpeg",
     "blast_urceni": "Diaphus rafinesqui",
     "blast_podobnost": 0.88,
     "rad": "Myctophiformes",
     "celed": "Myctophidae",
-    "fylogenetika": "ne – kontaminace"
+    "fylogenetika": "ne – kontaminace",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188C3",
     "morfologie": "Sternoptychidae",
-    "cox1": "ne",
     "foto": "file1_image13.jpeg",
     "blast_urceni": null,
     "blast_podobnost": null,
     "rad": null,
     "celed": null,
-    "fylogenetika": "ne – bez sekvence"
+    "fylogenetika": "ne – bez sekvence",
+    "sekvence cox1": "ne"
   },
   {
     "kod": "188C4",
     "morfologie": "Sternoptychidae",
-    "cox1": "ne",
     "foto": "file1_image14.jpeg",
     "blast_urceni": null,
     "blast_podobnost": null,
     "rad": null,
     "celed": null,
-    "fylogenetika": "ne – bez sekvence"
+    "fylogenetika": "ne – bez sekvence",
+    "sekvence cox1": "ne"
   },
   {
     "kod": "188C5",
     "morfologie": "Sternoptychidae",
-    "cox1": "ne",
     "foto": "file1_image15.jpeg",
     "blast_urceni": null,
     "blast_podobnost": null,
     "rad": null,
     "celed": null,
-    "fylogenetika": "ne – bez sekvence"
+    "fylogenetika": "ne – bez sekvence",
+    "sekvence cox1": "ne"
   },
   {
     "kod": "188D3",
     "morfologie": "Melanostomiinae",
-    "cox1": "ne",
     "foto": "file1_image16.jpeg",
     "blast_urceni": null,
     "blast_podobnost": null,
     "rad": null,
     "celed": null,
-    "fylogenetika": "ne – bez sekvence"
+    "fylogenetika": "ne – bez sekvence",
+    "sekvence cox1": "ne"
   },
   {
     "kod": "188D4",
     "morfologie": "Melanostomiinae",
-    "cox1": "ano",
     "foto": "file1_image17.jpeg",
     "blast_urceni": "Melanostomias bartonbeani",
     "blast_podobnost": 0.91,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188D5",
     "morfologie": "Melanostomiinae",
-    "cox1": "ano",
     "foto": "file1_image18.jpeg",
     "blast_urceni": "Melanostomias bartonbeani",
     "blast_podobnost": 0.92,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188D6",
     "morfologie": "Melanostomiinae",
-    "cox1": "ano",
     "foto": "file1_image19.jpeg",
     "blast_urceni": "Melanostomias bartonbeani",
     "blast_podobnost": 0.92,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188D7",
     "morfologie": "Melanostomiinae",
-    "cox1": "ne",
     "foto": "file1_image20.jpeg",
     "blast_urceni": null,
     "blast_podobnost": null,
     "rad": null,
     "celed": null,
-    "fylogenetika": "ne – bez sekvence"
+    "fylogenetika": "ne – bez sekvence",
+    "sekvence cox1": "ne"
   },
   {
     "kod": "188D8",
     "morfologie": "Melanostomiinae",
-    "cox1": "ne",
     "foto": "file1_image21.jpeg",
     "blast_urceni": null,
     "blast_podobnost": null,
     "rad": null,
     "celed": null,
-    "fylogenetika": "ne – bez sekvence"
+    "fylogenetika": "ne – bez sekvence",
+    "sekvence cox1": "ne"
   },
   {
     "kod": "188D9",
     "morfologie": "Melanostomiinae",
-    "cox1": "ano",
     "foto": "file1_image22.jpeg",
     "blast_urceni": "Melanostomias bartonbeani",
     "blast_podobnost": 0.92,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188E1",
     "morfologie": "Melanostomiinae",
-    "cox1": "ano",
     "foto": "file2_image1.jpeg",
     "blast_urceni": "Melanostomias bartonbeani",
     "blast_podobnost": 0.92,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188E2",
     "morfologie": "Melanostomiinae",
-    "cox1": "ne",
     "foto": "file2_image2.jpeg",
     "blast_urceni": null,
     "blast_podobnost": null,
     "rad": null,
     "celed": null,
-    "fylogenetika": "ne – bez sekvence"
+    "fylogenetika": "ne – bez sekvence",
+    "sekvence cox1": "ne"
   },
   {
     "kod": "188E3",
     "morfologie": "Melanostomiinae",
-    "cox1": "ano",
     "foto": "file2_image3.jpeg",
     "blast_urceni": "Melanostomias tentaculatus",
     "blast_podobnost": 0.99,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188E4",
     "morfologie": "Melanostomiinae",
-    "cox1": "ano",
     "foto": "file2_image4.jpeg",
     "blast_urceni": "Melanostomias tentaculatus",
     "blast_podobnost": 0.99,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188E5",
     "morfologie": "Bathophilus vaillanti",
-    "cox1": "ano",
     "foto": "file2_image5.jpeg",
     "blast_urceni": "Bathophilus sp.",
     "blast_podobnost": 0.9,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188E6",
     "morfologie": "Melanostomiinae",
-    "cox1": "ano",
     "foto": "file2_image6.jpeg",
     "blast_urceni": "Melanostomias bartonbeani",
     "blast_podobnost": 0.92,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188E7",
     "morfologie": "Melanostomiinae",
-    "cox1": "ano",
     "foto": "file2_image7.jpeg",
     "blast_urceni": "Melanostomias bartonbeani",
     "blast_podobnost": 0.92,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188E8",
     "morfologie": "Melanostomiinae",
-    "cox1": "ano",
     "foto": "file2_image8.jpeg",
     "blast_urceni": "Astronesthes gemmifer",
     "blast_podobnost": 0.997,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188E9",
     "morfologie": "Melanostomiinae",
-    "cox1": "ano",
     "foto": "file2_image9.jpeg",
     "blast_urceni": "Bathophilus brevis",
     "blast_podobnost": 0.9984,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "188F1",
     "morfologie": "Melanostomiinae",
-    "cox1": "ano",
     "foto": "file2_image10.jpeg",
     "blast_urceni": "Melanostomias tentaculatus",
     "blast_podobnost": 0.99,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "189A3",
     "morfologie": "Gonostomatidae",
-    "cox1": "ano",
     "foto": "file2_image11.jpeg",
     "blast_urceni": "Gonostoma denudatum",
     "blast_podobnost": 1,
     "rad": "Stomiiformes",
     "celed": "Gonostomatidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "189A4",
     "morfologie": "Gonostomatidae",
-    "cox1": "ano",
     "foto": "file2_image12.jpeg",
     "blast_urceni": "Lampanyctus festivus",
     "blast_podobnost": 0.99,
     "rad": "Myctophiformes",
     "celed": "Myctophidae",
-    "fylogenetika": "ne – jiný řád"
+    "fylogenetika": "ne – jiný řád",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "189A5",
     "morfologie": "Gonostomatidae",
-    "cox1": "ano",
     "foto": "file2_image13.jpeg",
     "blast_urceni": "Gonostoma denudatum",
     "blast_podobnost": 0.998,
     "rad": "Stomiiformes",
     "celed": "Gonostomatidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "189A6",
     "morfologie": "Gonostomatidae",
-    "cox1": "ano",
     "foto": "file2_image14.jpeg",
     "blast_urceni": "Gonostoma denudatum",
     "blast_podobnost": 1,
     "rad": "Stomiiformes",
     "celed": "Gonostomatidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "190B3",
     "morfologie": "Chauliodus danae",
-    "cox1": "ano",
     "foto": "file2_image15.jpeg",
     "blast_urceni": "Chauliodus sloani",
     "blast_podobnost": 0.99,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "190B4",
     "morfologie": "Chauliodus sp.",
-    "cox1": "ano",
     "foto": "file2_image16.jpeg",
     "blast_urceni": "Chauliodus sloani",
     "blast_podobnost": 0.99,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "190B5",
     "morfologie": "Chauliodus sp.",
-    "cox1": "ano",
     "foto": "file2_image17.jpeg",
     "blast_urceni": "Chauliodus sloani",
     "blast_podobnost": 1,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "190B6",
     "morfologie": "Chauliodus sp.",
-    "cox1": "ano",
     "foto": "file2_image18.jpeg",
     "blast_urceni": "Chauliodus sloani",
     "blast_podobnost": 0.9969,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "190B7",
     "morfologie": "Chauliodus sp.",
-    "cox1": "ano",
     "foto": "file2_image19.jpeg",
     "blast_urceni": "Chauliodus danae",
     "blast_podobnost": 0.99,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "190B8",
     "morfologie": "Chauliodus danae",
-    "cox1": "ano",
     "foto": "file2_image20.jpeg",
     "blast_urceni": "Chauliodus sloani",
     "blast_podobnost": 0.99,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "190B9",
     "morfologie": "Chauliodus danae",
-    "cox1": "ano",
     "foto": "file2_image21.jpeg",
     "blast_urceni": "Chauliodus sloani",
     "blast_podobnost": 0.9852,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   },
   {
     "kod": "190C1",
     "morfologie": "Chauliodus danae",
-    "cox1": "ano",
     "foto": "file2_image22.jpeg",
     "blast_urceni": "Chauliodus sloani",
     "blast_podobnost": 1,
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
-    "fylogenetika": "ano"
+    "fylogenetika": "ano",
+    "sekvence cox1": "ano"
   }
 ]

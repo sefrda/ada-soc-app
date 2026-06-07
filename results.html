@@ -289,7 +289,7 @@
         <th>Podobnost</th>
         <th>Řád</th>
         <th>Čeleď</th>
-        <th>COX1</th>
+        <th>Sekvence COX1</th>
         <th>Fylogenetika</th>
       </tr>
     </thead>
@@ -323,7 +323,7 @@
           <span id="modal-celed"></span>
         </div>
         <div class="modal-field">
-          <label>COX1 osekvenován</label>
+          <label>Sekvence COX1</label>
           <span id="modal-cox1"></span>
         </div>
         <div class="modal-field">
@@ -415,7 +415,7 @@
         <td>${simPill(r.blast_podobnost)}</td>
         <td>${r.rad || '<span style="color:#3a5a7a">–</span>'}</td>
         <td>${r.celed || '<span style="color:#3a5a7a">–</span>'}</td>
-        <td>${coxPill(r.cox1)}</td>
+        <td>${coxPill(r['sekvence cox1'])}</td>
         <td>${fylogPill(r.fylogenetika)}</td>
       `;
 
@@ -438,7 +438,7 @@
       r.blast_podobnost != null ? (Math.round(r.blast_podobnost * 100)) + ' %' : '–';
     document.getElementById('modal-rad').textContent = r.rad || '–';
     document.getElementById('modal-celed').textContent = r.celed || '–';
-    document.getElementById('modal-cox1').textContent = r.cox1 || '–';
+    document.getElementById('modal-cox1').textContent = r['sekvence cox1'] || '–';
     document.getElementById('modal-fylo').textContent = r.fylogenetika || '–';
     document.getElementById('modal-overlay').classList.add('open');
   }
