@@ -4,144 +4,122 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SOČ – Adéla Šefrhansová</title>
+  <link rel="stylesheet" href="shared/layout.css">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #0d2255;
-      color: #ffffff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 24px 20px;
+    .index-content {
+      max-width: 720px;
+      padding: 32px 28px;
     }
 
-    .card {
-      background: #163a74;
-      border: 1px solid #1f4d96;
-      border-radius: 12px;
-      padding: 36px 28px;
-      max-width: 480px;
-      width: 100%;
-      text-align: center;
+    .index-meta {
+      margin-bottom: 24px;
     }
 
-    .badge {
-      display: inline-block;
-      background: #eb9b1f;
-      color: #fff;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-    }
-
-    .fish-icon {
-      font-size: 48px;
-      margin-bottom: 16px;
-      display: block;
-    }
-
-    h1 {
+    .index-author {
       font-size: 20px;
       font-weight: 700;
-      line-height: 1.4;
       color: #ffffff;
-      margin-bottom: 10px;
+      margin-bottom: 4px;
     }
 
-    .author {
-      font-size: 15px;
-      color: #a8c4e8;
+    .index-obor {
+      font-size: 13px;
+      color: #7aa8d8;
+    }
+
+    .index-annotation {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #c8d8f0;
       margin-bottom: 32px;
     }
 
-    .divider {
-      border: none;
-      border-top: 1px solid #1f4d96;
-      margin: 0 0 28px;
+    .action-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
     }
 
-    .btn {
+    .action-card {
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 10px;
-      width: 100%;
-      padding: 15px 20px;
+      padding: 14px 16px;
+      background: #163a74;
+      border: 1px solid #eb9b1f;
       border-radius: 8px;
-      font-family: Arial, sans-serif;
-      font-size: 15px;
-      font-weight: 700;
+      color: #ffffff;
       text-decoration: none;
-      transition: opacity 0.15s, transform 0.1s;
-      cursor: pointer;
-      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.1s, transform 0.1s;
     }
 
-    .btn:active { opacity: 0.85; transform: scale(0.98); }
+    .action-card:hover  { background: #1f4d96; }
+    .action-card:active { transform: scale(0.98); }
 
-    .btn-primary {
-      background: #163a74;
-      color: #ffffff;
-      border: 1px solid #eb9b1f;
-      margin-bottom: 12px;
-    }
+    .action-icon { font-size: 20px; }
 
-    .btn-secondary {
-      background: #163a74;
-      color: #ffffff;
-      border: 1px solid #eb9b1f;
-    }
-
-    .btn-icon { font-size: 18px; }
-
-    footer {
-      margin-top: 32px;
-      font-size: 12px;
-      color: #4a6a9a;
-      font-family: Arial, sans-serif;
+    @media (max-width: 480px) {
+      .action-grid { grid-template-columns: 1fr; }
+      .index-content { padding: 20px 16px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="card">
-    <span class="badge">SOČ 2026</span>
-    <img src="Logo.jpeg" alt="Logo" style="width:120px; height:120px; object-fit:contain; margin-bottom:16px; display:block; margin-left:auto; margin-right:auto;">
-    <h1>Molekulární určování druhů hlubokomořských ryb z řádu Stomiiformes</h1>
-    <p class="author">Adéla Šefrhansová</p>
+<div id="header-placeholder"></div>
 
-    <hr class="divider">
+<div class="page-body">
+  <div id="nav-placeholder"></div>
 
-    <a class="btn btn-primary" href="SOC_ASefrhansova_2026.pdf" target="_blank">
-      <span class="btn-icon">📄</span>
-      Číst celou práci (PDF)
-    </a>
+  <main class="site-main">
+    <div class="index-content">
 
-    <a class="btn btn-secondary" href="results.html">
-      <span class="btn-icon">🔬</span>
-      Zobrazit výsledky
-    </a>
+      <div class="index-meta">
+        <p class="index-author">Adéla Šefrhansová</p>
+        <p class="index-obor">Obor 4. Biologie, geografie a geologie</p>
+      </div>
 
-    <a class="btn btn-secondary" href="tree.html" style="margin-top:12px;">
-      <span class="btn-icon">🌿</span>
-      Fylogenetický strom
-    </a>
+      <p class="index-annotation">
+        Hluboké moře je největší a nejméně prozkoumaný ekosystém na světě. Hlubokomořské ryby
+        s neuvěřitelnými specializacemi jsou nejčastější obratlovci na Zemi a mají velký
+        význam. Stále o nich však víme velmi málo. Cílem této práce bylo spolehlivě určit
+        44 poškozených hlubokomořských ryb vylovených z hloubky 600 m v okolí Azorských
+        ostrovů předběžně zařazených do řádu Stomiiformes. K jejich určení bylo použito
+        morfologické určení a DNA barcoding, pro který byl použit gen kódující cytochrom
+        oxidázu c podjednotku 1 (COX1). Získané výsledky byly ověřeny konstrukcí
+        fylogenetického stromu. Ze 44 ryb jsme získali 37 sekvencí, ze kterých bylo 14 ryb
+        určených do rodu: <em>Melanostomias</em> sp. (7 jedinců), <em>Bathophilus</em> sp.
+        (1), <em>Sternoptyx</em> sp. (4), <em>Chauliodus</em> sp. (2) a 23 ryb do druhu:
+        <em>Argyropelecus aculeatus</em> (4), <em>Argyropelecus gigas</em> (4),
+        <em>Melanostomias tentaculatus</em> (3), <em>Astronesthes gemmifer</em> (1),
+        <em>Chauliodus sloani</em> (5) a <em>Chauliodus danae</em> (1). Kombinace
+        morfologického a molekulárního přístupu umožnila přesnější určení studovaných ryb.
+        Výsledky této práce umožní zařazení těchto vzorků do dalšího výzkumu těchto ryb.
+      </p>
 
-    <a class="btn btn-secondary" href="https://youtu.be/ZS_aVh2Uosk?si=HzWGDUR0qawZ5g7N" target="_blank" style="margin-top:12px;">
-      <span class="btn-icon">▶️</span>
-      Přehrát video
-    </a>
-  </div>
+      <div class="action-grid">
+        <a class="action-card" href="results.html">
+          <span class="action-icon">🔬</span> Výsledky
+        </a>
+        <a class="action-card" href="tree.html">
+          <span class="action-icon">🌿</span> Fylogenetický strom
+        </a>
+        <a class="action-card" href="SOC_ASefrhansova_2026.pdf" target="_blank">
+          <span class="action-icon">📄</span> Celá práce (PDF)
+        </a>
+        <a class="action-card" href="https://youtu.be/ZS_aVh2Uosk?si=HzWGDUR0qawZ5g7N" target="_blank">
+          <span class="action-icon">▶️</span> Video
+        </a>
+      </div>
 
-  <footer>Středoškolská odborná činnost</footer>
+    </div>
+  </main>
+</div>
 
+<div id="footer-placeholder"></div>
+
+<script src="shared/nav.js"></script>
 </body>
 </html>

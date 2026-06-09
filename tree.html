@@ -4,86 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fylogenetický strom – Stomiiformes</title>
+  <link rel="stylesheet" href="shared/layout.css">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #0d2255;
-      color: #ffffff;
-      min-height: 100vh;
-    }
-
-    header {
-      background: #163a74;
-      border-bottom: 2px solid #eb9b1f;
-      padding: 16px 20px;
+    .tree-toolbar {
       position: sticky;
       top: 0;
       z-index: 10;
+      background: #163a74;
+      border-bottom: 1px solid #1f4d96;
+      padding: 10px 16px;
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
-    header a {
-      color: #a8c4e8;
-      text-decoration: none;
-      font-size: 13px;
-      white-space: nowrap;
-    }
-
-    header h1 {
-      font-size: 17px;
+    .tree-toolbar h2 {
+      font-size: 15px;
       font-weight: 700;
-      color: #ffffff;
+      flex: 1;
     }
 
     .hint {
       font-size: 12px;
       color: #eb9b1f;
-      padding: 8px 20px;
-      background: #0f2a5a;
-      border-bottom: 1px solid #1f4d96;
-    }
-
-    /* Zoom controls */
-    .zoom-bar {
-      display: flex;
-      gap: 8px;
-      padding: 10px 20px;
-      align-items: center;
-      background: #0d2255;
+      white-space: nowrap;
     }
 
     .zoom-btn {
-      background: #163a74;
+      background: #0d2255;
       border: 1px solid #1f4d96;
       color: #fff;
       font-size: 18px;
-      width: 36px;
-      height: 36px;
+      width: 34px;
+      height: 34px;
       border-radius: 6px;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      user-select: none;
+      flex-shrink: 0;
     }
 
     .zoom-btn:active { background: #1f4d96; }
+    .zoom-label { font-size: 13px; color: #a8c4e8; min-width: 40px; text-align: center; }
 
-    .zoom-label {
-      font-size: 13px;
-      color: #a8c4e8;
-      min-width: 44px;
-      text-align: center;
-    }
-
-    /* SVG container */
     .svg-container {
       overflow: auto;
-      padding: 16px 20px;
+      padding: 16px;
       cursor: grab;
     }
 
@@ -94,130 +62,55 @@
       transform-origin: top left;
     }
 
-    /* ZUK label styling injected via JS */
     .zuk-label {
       cursor: pointer !important;
       fill: #eb9b1f !important;
       font-weight: bold !important;
-      transition: opacity 0.1s;
     }
 
-    .zuk-label:hover {
-      opacity: 0.75;
-    }
+    .zuk-label:hover { opacity: 0.75; }
 
     /* Modal */
     .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.85);
-      z-index: 100;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.85); z-index: 100;
+      align-items: center; justify-content: center; padding: 20px;
     }
-
     .modal-overlay.open { display: flex; }
-
     .modal {
-      background: #163a74;
-      border: 2px solid #eb9b1f;
-      border-radius: 12px;
-      max-width: 500px;
-      width: 100%;
-      overflow: hidden;
-      max-height: 90vh;
-      overflow-y: auto;
+      background: #163a74; border: 2px solid #eb9b1f;
+      border-radius: 12px; max-width: 500px; width: 100%;
+      overflow: hidden; max-height: 90vh; overflow-y: auto;
     }
-
-    .modal-img {
-      width: 100%;
-      max-height: 280px;
-      object-fit: contain;
-      background: #0d2255;
-      display: block;
-    }
-
+    .modal-img { width: 100%; max-height: 280px; object-fit: contain; background: #0d2255; display: block; }
     .modal-body { padding: 20px; }
-
-    .modal-kod {
-      font-family: monospace;
-      font-size: 12px;
-      color: #eb9b1f;
-      margin-bottom: 4px;
-    }
-
-    .modal-name {
-      font-size: 18px;
-      font-weight: 700;
-      font-style: italic;
-      color: #ffffff;
-      margin-bottom: 16px;
-      line-height: 1.3;
-    }
-
-    .modal-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .modal-field label {
-      font-size: 10px;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      color: #eb9b1f;
-      display: block;
-      margin-bottom: 3px;
-      font-weight: 700;
-    }
-
-    .modal-field span { font-size: 13px; color: #ffffff; }
-
-    .pill {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 10px;
-      font-size: 11px;
-      font-weight: 700;
-    }
-    .pill-yes  { background: #0d3d2a; color: #4ecb8a; }
-    .pill-no   { background: #3d1a0d; color: #e07a5f; }
-    .pill-warn { background: #3d2e0d; color: #eb9b1f; }
-
-    .modal-close {
-      width: 100%;
-      padding: 12px;
-      background: #eb9b1f;
-      color: #fff;
-      border: none;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      border-radius: 6px;
-    }
+    .modal-kod  { font-family: monospace; font-size: 12px; color: #eb9b1f; margin-bottom: 4px; }
+    .modal-name { font-size: 18px; font-weight: 700; font-style: italic; color: #fff; margin-bottom: 16px; line-height: 1.3; }
+    .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+    .modal-field label { font-size: 10px; letter-spacing: .8px; text-transform: uppercase; color: #eb9b1f; display: block; margin-bottom: 3px; font-weight: 700; }
+    .modal-field span  { font-size: 13px; color: #fff; }
+    .modal-close { width: 100%; padding: 12px; background: #eb9b1f; color: #fff; border: none; font-family: Arial, sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; border-radius: 6px; }
   </style>
 </head>
 <body>
 
-<header>
-  <a href="index.html">← Zpět</a>
-  <h1>🌿 Fylogenetický strom</h1>
-</header>
+<div id="header-placeholder"></div>
 
-<p class="hint">Klikni na <span style="color:#eb9b1f;font-weight:bold;">oranžový popisek</span> pro detail vzorku</p>
+<div class="page-body">
+  <div id="nav-placeholder"></div>
 
-<div class="zoom-bar">
-  <button class="zoom-btn" id="zoom-out">−</button>
-  <span class="zoom-label" id="zoom-val">30%</span>
-  <button class="zoom-btn" id="zoom-in">+</button>
-</div>
+  <main class="site-main">
 
-<div class="svg-container" id="svg-container">
-  <div class="svg-wrapper" id="svg-wrapper" >
+    <div class="tree-toolbar">
+      <h2>🌿 Fylogenetický strom</h2>
+      <span class="hint">Klikni na oranžový popisek pro detail</span>
+      <button class="zoom-btn" id="zoom-out">−</button>
+      <span class="zoom-label" id="zoom-val">30%</span>
+      <button class="zoom-btn" id="zoom-in">+</button>
+    </div>
+
+    <div class="svg-container" id="svg-container">
+      <div class="svg-wrapper" id="svg-wrapper">
 <svg style="fill-opacity:1; color-rendering:auto; color-interpolation:auto; text-rendering:auto; stroke:black; stroke-linecap:square; stroke-miterlimit:10; shape-rendering:auto; stroke-opacity:1; fill:black; stroke-dasharray:none; font-weight:normal; stroke-width:1; font-family:&apos;Dialog&apos;; font-style:normal; stroke-linejoin:miter; font-size:12; stroke-dashoffset:0; image-rendering:auto;" xmlns="http://www.w3.org/2000/svg" width="2102.0" viewBox="0 0 2102.0 2802.0" xmlns:xlink="http://www.w3.org/1999/xlink" height="2802.0"
 ><!--Generated by the Batik Graphics2D SVG Generator--><defs id="genericDefs"
   /><rect width="2102" height="2802" fill="white"/><g
@@ -1298,8 +1191,14 @@
   ></g
 ></svg
 >
-  </div>
+
+      </div>
+    </div>
+
+  </main>
 </div>
+
+<div id="footer-placeholder"></div>
 
 <!-- Modal -->
 <div class="modal-overlay" id="modal-overlay">
@@ -1321,6 +1220,8 @@
   </div>
 </div>
 
+
+<script src="shared/nav.js"></script>
 <script>
   let dbData = [];
   let scale = 0.3;
@@ -1399,5 +1300,7 @@
   });
 </script>
 
+</body>
+</html>
 </body>
 </html>
