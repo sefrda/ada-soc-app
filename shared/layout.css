@@ -68,6 +68,38 @@ body {
   overflow: hidden;
 }
 
+/* ===== Sidebar toggle (desktop only) ===== */
+.btn-nav-toggle {
+  background: none;
+  border: 1px solid #1f4d96;
+  color: #a8c4e8;
+  font-size: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color 0.15s, border-color 0.15s;
+  line-height: 1;
+}
+
+.btn-nav-toggle:hover { color: #ffffff; border-color: #eb9b1f; }
+
+@media (max-width: 768px) {
+  .btn-nav-toggle { display: none; }
+}
+
+/* Collapsed sidebar state */
+.nav-collapsed #nav-placeholder {
+  width: 0;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+}
+
 /* ===== Home button (mobile only) ===== */
 .btn-home {
   display: none;

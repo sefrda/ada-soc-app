@@ -216,6 +216,7 @@
           <tr>
             <th>Foto</th>
             <th>Kód</th>
+            <th>Závěrečné určení</th>
             <th>Určení (BLAST)</th>
             <th>Podobnost</th>
             <th>Řád</th>
@@ -242,6 +243,7 @@
       <p class="modal-kod" id="modal-kod"></p>
       <p class="modal-name" id="modal-name"></p>
       <div class="modal-grid">
+        <div class="modal-field" style="grid-column:1/-1"><label>Závěrečné určení</label><span id="modal-zaverecne" style="font-style:italic;"></span></div>
         <div class="modal-field"><label>Morfologie</label><span id="modal-morfologie"></span></div>
         <div class="modal-field"><label>Podobnost BLAST</label><span id="modal-sim"></span></div>
         <div class="modal-field"><label>Řád</label><span id="modal-rad"></span></div>
@@ -311,6 +313,7 @@
       tr.innerHTML = `
         <td>${thumb}</td>
         <td class="code">${r.kod}</td>
+        <td class="species">${r.zaverecne_urceni || '<span style="color:#4a6a9a">–</span>'}</td>
         <td class="species">${r.blast_urceni || '<span style="color:#4a6a9a">–</span>'}</td>
         <td>${simPill(r.blast_podobnost)}</td>
         <td>${r.rad   || '<span style="color:#4a6a9a">–</span>'}</td>
@@ -328,8 +331,9 @@
     const imgSrc = r.foto ? `images/${r.foto}` : '';
     const img = document.getElementById('modal-img');
     img.src = imgSrc; img.style.display = imgSrc ? 'block' : 'none';
-    document.getElementById('modal-kod').textContent  = r.kod;
-    document.getElementById('modal-name').textContent = r.blast_urceni || r.morfologie || '–';
+    document.getElementById('modal-kod').textContent       = r.kod;
+    document.getElementById('modal-name').textContent      = r.zaverecne_urceni || r.blast_urceni || r.morfologie || '–';
+    document.getElementById('modal-zaverecne').textContent = r.zaverecne_urceni || '–';
     document.getElementById('modal-morfologie').textContent = r.morfologie || '–';
     document.getElementById('modal-sim').textContent  = r.blast_podobnost != null ? Math.round(r.blast_podobnost * 100) + ' %' : '–';
     document.getElementById('modal-rad').textContent   = r.rad || '–';

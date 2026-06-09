@@ -40,4 +40,27 @@
       nav?.classList.remove('open');
     });
   });
+
+  // Sidebar toggle (desktop)
+  const toggleBtn = document.getElementById('btn-nav-toggle');
+  const pageBody  = document.querySelector('.page-body');
+
+  function applyNavState(collapsed) {
+    if (collapsed) {
+      pageBody?.classList.add('nav-collapsed');
+      if (toggleBtn) toggleBtn.textContent = '›';
+    } else {
+      pageBody?.classList.remove('nav-collapsed');
+      if (toggleBtn) toggleBtn.textContent = '‹';
+    }
+  }
+
+  // Restore saved state
+  applyNavState(localStorage.getItem('navCollapsed') === '1');
+
+  toggleBtn?.addEventListener('click', () => {
+    const collapsed = !pageBody?.classList.contains('nav-collapsed');
+    localStorage.setItem('navCollapsed', collapsed ? '1' : '0');
+    applyNavState(collapsed);
+  });
 })();
