@@ -1,0 +1,272 @@
+/* ===== Reset ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ===== App shell ===== */
+body {
+  font-family: Arial, sans-serif;
+  background: #0d2255;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ===== Site header ===== */
+.site-header {
+  background: #163a74;
+  border-bottom: 2px solid #eb9b1f;
+  flex-shrink: 0;
+  z-index: 30;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  gap: 12px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+  min-width: 0;
+}
+
+.header-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 6px;
+}
+
+.header-text { min-width: 0; }
+
+.header-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: #eb9b1f;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.header-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== Sidebar toggle (desktop only) ===== */
+.btn-nav-toggle {
+  background: none;
+  border: 1px solid #1f4d96;
+  color: #a8c4e8;
+  font-size: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color 0.15s, border-color 0.15s;
+  line-height: 1;
+}
+
+.btn-nav-toggle:hover { color: #ffffff; border-color: #eb9b1f; }
+
+@media (max-width: 768px) {
+  .btn-nav-toggle { display: none; }
+}
+
+/* Collapsed sidebar state */
+.nav-collapsed #nav-placeholder {
+  width: 0;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+}
+
+/* ===== Home button (mobile only) ===== */
+.btn-home {
+  display: none;
+  color: #a8c4e8;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 4px 0;
+}
+
+.btn-home:hover { color: #ffffff; }
+
+@media (max-width: 768px) {
+  .btn-home { display: inline; }
+  .btn-home.hidden { display: none; }
+}
+
+/* ===== Hamburger ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+/* ===== Page body ===== */
+.page-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ===== Sidebar nav ===== */
+.site-nav {
+  width: 220px;
+  flex-shrink: 0;
+  background: #0f2a5a;
+  border-right: 1px solid #1f4d96;
+  overflow-y: auto;
+  padding: 16px 0;
+}
+
+.nav-list {
+  list-style: none;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 20px;
+  color: #a8c4e8;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.1s, color 0.1s;
+  border-left: 3px solid transparent;
+}
+
+.nav-link:hover {
+  background: #163a74;
+  color: #ffffff;
+}
+
+.nav-link.active {
+  background: #163a74;
+  color: #ffffff;
+  border-left-color: #eb9b1f;
+}
+
+.nav-link.ext { color: #7aa8d8; }
+
+.nav-divider {
+  border: none;
+  border-top: 1px solid #1f4d96;
+  margin: 10px 16px;
+}
+
+/* ===== Main content ===== */
+.site-main {
+  flex: 1;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+/* Fill layout – pro stránky s tabulkou/stromem (přidává si stránka sama) */
+.site-main.fill {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: #163a74;
+  border-top: 1px solid #1f4d96;
+  padding: 8px 20px;
+  font-size: 12px;
+  color: #4a6a9a;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.footer-text {
+  flex: 1;
+  text-align: center;
+}
+
+.footer-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.footer-logo-eu {
+  height: 35px;
+}
+
+/* ===== Mobile (≤ 768px) ===== */
+@media (max-width: 768px) {
+  .page-body {
+    flex-direction: column;
+  }
+
+  .hamburger { display: flex; }
+
+  .site-nav {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    border-right: none;
+    border-bottom: 1px solid #1f4d96;
+    transition: max-height 0.25s ease;
+  }
+
+  .site-nav.open {
+    max-height: 400px;
+    padding: 8px 0;
+  }
+
+  .header-title {
+    font-size: 13px;
+    -webkit-line-clamp: 2;
+  }
+}

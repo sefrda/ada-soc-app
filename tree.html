@@ -4,86 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fylogenetický strom – Stomiiformes</title>
+  <link rel="stylesheet" href="shared/layout.css">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #0d2255;
-      color: #ffffff;
-      min-height: 100vh;
-    }
-
-    header {
-      background: #163a74;
-      border-bottom: 2px solid #eb9b1f;
-      padding: 16px 20px;
+    .tree-toolbar {
       position: sticky;
       top: 0;
       z-index: 10;
+      background: #163a74;
+      border-bottom: 1px solid #1f4d96;
+      padding: 10px 16px;
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
-    header a {
-      color: #a8c4e8;
-      text-decoration: none;
-      font-size: 13px;
-      white-space: nowrap;
-    }
-
-    header h1 {
-      font-size: 17px;
+    .tree-toolbar h2 {
+      font-size: 15px;
       font-weight: 700;
-      color: #ffffff;
+      flex: 1;
     }
 
     .hint {
       font-size: 12px;
       color: #eb9b1f;
-      padding: 8px 20px;
-      background: #0f2a5a;
-      border-bottom: 1px solid #1f4d96;
-    }
-
-    /* Zoom controls */
-    .zoom-bar {
-      display: flex;
-      gap: 8px;
-      padding: 10px 20px;
-      align-items: center;
-      background: #0d2255;
+      white-space: nowrap;
     }
 
     .zoom-btn {
-      background: #163a74;
+      background: #0d2255;
       border: 1px solid #1f4d96;
       color: #fff;
       font-size: 18px;
-      width: 36px;
-      height: 36px;
+      width: 34px;
+      height: 34px;
       border-radius: 6px;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      user-select: none;
+      flex-shrink: 0;
     }
 
     .zoom-btn:active { background: #1f4d96; }
+    .zoom-label { font-size: 13px; color: #a8c4e8; min-width: 40px; text-align: center; }
 
-    .zoom-label {
-      font-size: 13px;
-      color: #a8c4e8;
-      min-width: 44px;
-      text-align: center;
-    }
-
-    /* SVG container */
     .svg-container {
       overflow: auto;
-      padding: 16px 20px;
+      padding: 16px;
       cursor: grab;
     }
 
@@ -94,130 +62,105 @@
       transform-origin: top left;
     }
 
-    /* ZUK label styling injected via JS */
     .zuk-label {
       cursor: pointer !important;
       fill: #eb9b1f !important;
       font-weight: bold !important;
-      transition: opacity 0.1s;
     }
 
-    .zuk-label:hover {
-      opacity: 0.75;
-    }
+    .zuk-label:hover { opacity: 0.75; }
 
     /* Modal */
     .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.85);
-      z-index: 100;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.85); z-index: 100;
+      align-items: center; justify-content: center; padding: 20px;
     }
-
     .modal-overlay.open { display: flex; }
-
     .modal {
-      background: #163a74;
-      border: 2px solid #eb9b1f;
-      border-radius: 12px;
-      max-width: 500px;
-      width: 100%;
-      overflow: hidden;
-      max-height: 90vh;
-      overflow-y: auto;
+      background: #163a74; border: 2px solid #eb9b1f;
+      border-radius: 12px; max-width: 500px; width: 100%;
+      overflow: hidden; max-height: 90vh; overflow-y: auto;
     }
-
-    .modal-img {
-      width: 100%;
-      max-height: 280px;
-      object-fit: contain;
-      background: #0d2255;
-      display: block;
-    }
-
+    .modal-img { width: 100%; max-height: 280px; object-fit: contain; background: #0d2255; display: block; }
     .modal-body { padding: 20px; }
+    .modal-kod  { font-family: monospace; font-size: 12px; color: #eb9b1f; margin-bottom: 4px; }
+    .modal-name { font-size: 18px; font-weight: 700; font-style: italic; color: #fff; margin-bottom: 16px; line-height: 1.3; }
+    .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+    .modal-field label { font-size: 10px; letter-spacing: .8px; text-transform: uppercase; color: #eb9b1f; display: block; margin-bottom: 3px; font-weight: 700; }
+    .modal-field span  { font-size: 13px; color: #fff; }
+    .modal-close { width: 100%; padding: 12px; background: #eb9b1f; color: #fff; border: none; font-family: Arial, sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; border-radius: 6px; }
 
-    .modal-kod {
-      font-family: monospace;
-      font-size: 12px;
-      color: #eb9b1f;
-      margin-bottom: 4px;
+    /* Group comment modal */
+    .group-modal {
+      background: #163a74; border: 2px solid #4ecb8a;
+      border-radius: 12px; max-width: 560px; width: 100%;
+      overflow: hidden; max-height: 90vh; overflow-y: auto;
+    }
+    .group-modal-header {
+      background: #0f2a5a;
+      padding: 16px 20px 12px;
+      border-bottom: 1px solid #4ecb8a;
+    }
+    .group-modal-tag {
+      font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
+      color: #4ecb8a; font-weight: 700; margin-bottom: 4px;
+    }
+    .group-modal-title {
+      font-size: 18px; font-weight: 700; font-style: italic; color: #fff;
+    }
+    .group-modal-img {
+      width: 100%; max-height: 300px; object-fit: contain;
+      background: #0d2255; display: block;
+    }
+    .group-modal-text {
+      padding: 16px 20px 20px;
+      font-size: 13px; line-height: 1.7; color: #c8d8f0;
+    }
+    .group-modal-close {
+      display: block; width: calc(100% - 40px); margin: 0 20px 20px;
+      padding: 12px; background: #4ecb8a; color: #0a1a3a;
+      border: none; font-family: Arial, sans-serif; font-size: 14px;
+      font-weight: 700; cursor: pointer; border-radius: 6px;
     }
 
-    .modal-name {
-      font-size: 18px;
-      font-weight: 700;
-      font-style: italic;
-      color: #ffffff;
-      margin-bottom: 16px;
-      line-height: 1.3;
+    /* Info button */
+    .info-btn {
+      background: #0d2255; border: 1px solid #4ecb8a;
+      color: #4ecb8a; font-size: 13px; font-weight: 700;
+      padding: 6px 12px; border-radius: 6px; cursor: pointer;
+      white-space: nowrap; flex-shrink: 0;
     }
+    .info-btn:hover { background: #163a74; }
 
-    .modal-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .modal-field label {
-      font-size: 10px;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      color: #eb9b1f;
-      display: block;
-      margin-bottom: 3px;
-      font-weight: 700;
-    }
-
-    .modal-field span { font-size: 13px; color: #ffffff; }
-
-    .pill {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 10px;
-      font-size: 11px;
-      font-weight: 700;
-    }
-    .pill-yes  { background: #0d3d2a; color: #4ecb8a; }
-    .pill-no   { background: #3d1a0d; color: #e07a5f; }
-    .pill-warn { background: #3d2e0d; color: #eb9b1f; }
-
-    .modal-close {
-      width: 100%;
-      padding: 12px;
-      background: #eb9b1f;
-      color: #fff;
-      border: none;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      font-weight: 700;
+    /* Colored region hover – applied via JS */
+    .region-highlight {
       cursor: pointer;
-      border-radius: 6px;
+      transition: opacity 0.15s;
     }
+    .region-highlight:hover { opacity: 0.65 !important; }
   </style>
 </head>
 <body>
 
-<header>
-  <a href="index.html">← Zpět</a>
-  <h1>🌿 Fylogenetický strom</h1>
-</header>
+<div id="header-placeholder"></div>
 
-<p class="hint">Klikni na <span style="color:#eb9b1f;font-weight:bold;">oranžový popisek</span> pro detail vzorku</p>
+<div class="page-body">
+  <div id="nav-placeholder"></div>
 
-<div class="zoom-bar">
-  <button class="zoom-btn" id="zoom-out">−</button>
-  <span class="zoom-label" id="zoom-val">30%</span>
-  <button class="zoom-btn" id="zoom-in">+</button>
-</div>
+  <main class="site-main fill">
 
-<div class="svg-container" id="svg-container">
-  <div class="svg-wrapper" id="svg-wrapper" >
+    <div class="tree-toolbar">
+      <h2>🌿 Fylogenetický strom</h2>
+      <span class="hint">🟠 popisek = detail ryby · 🟩 oblast = komentář skupiny</span>
+      <button class="info-btn" id="btn-o-stromu">ℹ️ O stromu</button>
+      <button class="zoom-btn" id="zoom-out">−</button>
+      <span class="zoom-label" id="zoom-val">30%</span>
+      <button class="zoom-btn" id="zoom-in">+</button>
+    </div>
+
+    <div class="svg-container" id="svg-container">
+      <div class="svg-wrapper" id="svg-wrapper">
 <svg style="fill-opacity:1; color-rendering:auto; color-interpolation:auto; text-rendering:auto; stroke:black; stroke-linecap:square; stroke-miterlimit:10; shape-rendering:auto; stroke-opacity:1; fill:black; stroke-dasharray:none; font-weight:normal; stroke-width:1; font-family:&apos;Dialog&apos;; font-style:normal; stroke-linejoin:miter; font-size:12; stroke-dashoffset:0; image-rendering:auto;" xmlns="http://www.w3.org/2000/svg" width="2102.0" viewBox="0 0 2102.0 2802.0" xmlns:xlink="http://www.w3.org/1999/xlink" height="2802.0"
 ><!--Generated by the Batik Graphics2D SVG Generator--><defs id="genericDefs"
   /><rect width="2102" height="2802" fill="white"/><g
@@ -1298,10 +1241,29 @@
   ></g
 ></svg
 >
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<div id="footer-placeholder"></div>
+
+<!-- Group comment modal -->
+<div class="modal-overlay" id="group-modal-overlay">
+  <div class="group-modal">
+    <div class="group-modal-header">
+      <p class="group-modal-tag">Skupinový komentář</p>
+      <p class="group-modal-title" id="gm-title"></p>
+    </div>
+    <img class="group-modal-img" id="gm-img" src="" alt="" style="display:none">
+    <p class="group-modal-text" id="gm-text"></p>
+    <button class="group-modal-close" id="gm-close">Zavřít</button>
   </div>
 </div>
 
-<!-- Modal -->
+<!-- Fish detail modal -->
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal">
     <img class="modal-img" id="modal-img" src="" alt="">
@@ -1321,7 +1283,52 @@
   </div>
 </div>
 
+
+<script src="shared/nav.js"></script>
 <script>
+  // ── Group comment data ───────────────────────────────────────────────────
+  const groupData = [
+    {
+      title: 'Melanostomias sp.',
+      image: 'images/strom_group_01.jpeg',
+      text: 'Ryby určené jako Melanostomias sp. nebylo možné kvůli nízké shodě COX1 sekvencí určit až do úrovně druhu. Z fylogenetického stromu lze však odvodit, že všechny tyto ryby náleží do jednoho druhu, jen není jasné do kterého. Z následného porovnání, jaké aktuálně akceptované druhy rodu Melanostomias se vyskytují v okolí Azorských ostrovů a zároveň nejsou zastoupeny v databázích, vyplynulo, že by se mohlo jednat o druh Melanostomias biseriatus.'
+    },
+    {
+      title: 'Bathophilus sp.',
+      image: 'images/strom_group_02.jpeg',
+      text: 'Ryba určená jako Bathophilus sp. nemohla být kvůli nízké shodě COX1 sekvencí určena až do úrovně druhu, s největší pravděpodobností se tak jedná o druh, ze stejného rodu, který není zastoupen v databázích. Zároveň lze z fylogenetického stromu odvodit, že se nejedná o druh Bathophilus brevis. Z následného porovnání, jaké aktuálně akceptované druhy rodu Bathophilus se vyskytují v okolí Azorských ostrovů a zároveň nejsou zastoupeny v databázích, vyplynulo, že by se mohlo jednat o druh Bathophilus nigerrimus.'
+    },
+    {
+      title: 'Chauliodus sp.',
+      image: 'images/strom_group_03.jpeg',
+      text: 'Vzorky označené jako Chauliodus sp. byly původně za pomoci BLASTu určené jako Chauliodus sloani s velkými podporami (99–99,7 %), na základě fylogenetické analýzy by to však znamenalo, že by druh Chauliodus sloani vycházel parafyleticky. I z tohoto důvodu byla větev, bez referenčních sekvencí určena pouze do rodu Chauliodus. Možných vysvětlení je několik, jedním z nich je velká populační diverzita v rámci druhu Chauliodus sloani, druhým je kryptický druh. Faktem, který celou situaci dělá ještě zajímavější, je geografické rozmístění vzorků. Použitá referenční sekvence druhu Chauliodus sloani pocházela z výrazně jižnější části Atlantiku než naše vzorky. Což je velmi zvláštní, protože v rámci jednoho druhu jsou si jedinci z jedné populace obvykle příbuznější mezi sebou, než s jedinci stejného druhu z jiných populací.'
+    },
+    {
+      title: 'Gonostoma / Lampanyctus',
+      image: 'images/strom_group_04.jpeg',
+      text: 'Při prvotním třídění ryb se do našeho datasetu dostala ryba náležící k řádu Myctophiformes, při předběžném morfologickém určení byla zaměněna s Gonostomou. Tato ryba byla následně na základě získané COX1 sekvence určena jako druh Lampanyctus festivus. Na obrázku jsou zvýrazněny morfologické rozdíly mezi Lampanyctem a Gonostomou, které byly přehlédnuty. Lampanyctus festivus má výrazně delší prsní ploutve (A) a na rozdíl od Gonostomy nemá vidět zuby (B). Na tomto příkladu se dá dobře ilustrovat, že molekulární metody určování druhů jsou užitečné nejen k určování poškozených jedinců, ale mohou být využity i jako kontrola správnosti morfologických určení.'
+    }
+  ];
+
+  // Map SVG fill colors → groupData index
+  const GROUP_COLOR_MAP = {
+    'rgb(192,230,55)':  0,   // Melanostomias sp. (žlutozelená)
+    'rgb(41,185,242)':  1,   // Bathophilus sp. (světle modrá)
+    'rgb(48,227,240)':  1,   // Bathophilus sp. (azurová)
+    'rgb(255,161,197)': 1,   // Bathophilus sp. (růžová)
+    'rgb(201,77,255)':  2,   // Chauliodus sp. (fialová)
+    'rgb(186,130,255)': 2,   // Chauliodus sp. (světle fialová)
+    'rgb(133,157,255)': 2,   // Chauliodus sp. (modrofialová)
+    'rgb(255,222,89)':  3,   // Gonostoma/Lampanyctus (žlutá)
+  };
+
+  // General tree description (shown by the "O stromu" button)
+  const treeDescription = {
+    title: 'Fylogenetický strom',
+    image: null,
+    text: 'Na obrázku vidíte fylogenetický strom sekvencí COX1 pro ryby řádu Stomiiformes vytvořený za účelem ověření správnosti určení druhů. Tato analýza zahrnovala námi osekvenované geny COX1 a důvěryhodné referenční sekvence COX1 pro ryby ze všech čeledí řádu Stomiiformes. Fylogenetický strom je pro větší přehlednost zcela rozřešený. Čísla u jednotlivých uzlů vyjadřují míru podpory (posteriorní pravděpodobnost), kdy 1 je nejvyšší a 0 nejnižší podpora. Jako nejvzdálenější outgroup k zakořenění stromu bylo použito Danio rerio (řád Cypriniformes) a jako druhý outgroup byla použita Retropinna semoni ze sesterského řádu Osmeriformes, oba outgroupy jsou zvýrazněny červenou barvou písma. Názvy referenčních sekvencí sestávají z kódu, podle kterého jsou dohledatelné v databázi NCBI a latinského jména. Názvy sekvencí našich vzorků obsahují předponu ZUK, kód vzorku a latinské určení do druhu nebo rodu. Druhy, k nimž byly přiřazeny naše vzorky, jsou barevně zvýrazněny.'
+  };
+
   let dbData = [];
   let scale = 0.3;
 
@@ -1337,7 +1344,7 @@
     // Set initial zoom
     applyZoom();
 
-    // Find all SVG text elements with ZUK_ prefix
+    // ── ZUK text labels → fish detail modal ────────────────────────────────
     const texts = document.querySelectorAll('#svg-wrapper text');
     texts.forEach(el => {
       const t = el.textContent.trim();
@@ -1351,6 +1358,22 @@
           if (record) openModal(record);
         });
       }
+    });
+
+    // ── Colored path regions → group comment modal ──────────────────────────
+    const paths = document.querySelectorAll('#svg-wrapper path');
+    paths.forEach(path => {
+      const style = path.getAttribute('style') || '';
+      const fm = style.match(/fill:(rgb\(\d+,\d+,\d+\))/);
+      if (!fm) return;
+      const fill = fm[1];
+      if (!(fill in GROUP_COLOR_MAP)) return;
+      const gIdx = GROUP_COLOR_MAP[fill];
+      path.classList.add('region-highlight');
+      path.addEventListener('click', e => {
+        e.stopPropagation();
+        openGroupModal(groupData[gIdx]);
+      });
     });
   }
 
@@ -1397,7 +1420,37 @@
     if (e.target === e.currentTarget)
       document.getElementById('modal-overlay').classList.remove('open');
   });
+
+  // ── Group comment modal ──────────────────────────────────────────────────
+  function openGroupModal(data) {
+    document.getElementById('gm-title').textContent = data.title;
+    document.getElementById('gm-text').textContent  = data.text;
+    const img = document.getElementById('gm-img');
+    if (data.image) {
+      img.src = data.image;
+      img.style.display = 'block';
+    } else {
+      img.src = '';
+      img.style.display = 'none';
+    }
+    document.getElementById('group-modal-overlay').classList.add('open');
+  }
+
+  document.getElementById('gm-close').addEventListener('click', () => {
+    document.getElementById('group-modal-overlay').classList.remove('open');
+  });
+  document.getElementById('group-modal-overlay').addEventListener('click', e => {
+    if (e.target === e.currentTarget)
+      document.getElementById('group-modal-overlay').classList.remove('open');
+  });
+
+  // "O stromu" button
+  document.getElementById('btn-o-stromu').addEventListener('click', () => {
+    openGroupModal(treeDescription);
+  });
 </script>
 
+</body>
+</html>
 </body>
 </html>

@@ -8,7 +8,8 @@
     "rad": "Stomiiformes",
     "celed": "Sternoptychidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Argyropelecus aculeatus"
   },
   {
     "kod": "188A2",
@@ -19,7 +20,8 @@
     "rad": "Stomiiformes",
     "celed": "Sternoptychidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Argyropelecus aculeatus"
   },
   {
     "kod": "188A3",
@@ -30,7 +32,8 @@
     "rad": "Stomiiformes",
     "celed": "Sternoptychidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Argyropelecus aculeatus"
   },
   {
     "kod": "188A4",
@@ -41,7 +44,8 @@
     "rad": "Stomiiformes",
     "celed": "Sternoptychidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Argyropelecus aculeatus"
   },
   {
     "kod": "188B2",
@@ -52,7 +56,8 @@
     "rad": "Stomiiformes",
     "celed": "Sternoptychidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Argyropelecus gigas"
   },
   {
     "kod": "188B3",
@@ -63,7 +68,8 @@
     "rad": "Stomiiformes",
     "celed": "Sternoptychidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Argyropelecus gigas"
   },
   {
     "kod": "188B4",
@@ -74,7 +80,8 @@
     "rad": "Stomiiformes",
     "celed": "Sternoptychidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Argyropelecus gigas"
   },
   {
     "kod": "188B5",
@@ -85,7 +92,8 @@
     "rad": "Stomiiformes",
     "celed": "Sternoptychidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Argyropelecus gigas"
   },
   {
     "kod": "188B8",
@@ -96,7 +104,8 @@
     "rad": "Stomiiformes",
     "celed": "Sternoptychidae",
     "fylogenetika": "ne – kontaminace",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Sternoptyx sp. (na základě morfologie)"
   },
   {
     "kod": "188B9",
@@ -107,7 +116,8 @@
     "rad": "Myctophiformes",
     "celed": "Myctophidae",
     "fylogenetika": "ne – kontaminace",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Sternoptyx sp. (na základě morfologie)"
   },
   {
     "kod": "188C1",
@@ -118,7 +128,8 @@
     "rad": "Myctophiformes",
     "celed": "Myctophidae",
     "fylogenetika": "ne – kontaminace",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Sternoptyx sp. (na základě morfologie)"
   },
   {
     "kod": "188C2",
@@ -129,7 +140,8 @@
     "rad": "Myctophiformes",
     "celed": "Myctophidae",
     "fylogenetika": "ne – kontaminace",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Sternoptyx sp. (na základě morfologie)"
   },
   {
     "kod": "188C3",
@@ -140,7 +152,8 @@
     "rad": null,
     "celed": null,
     "fylogenetika": "ne – bez sekvence",
-    "sekvence cox1": "ne"
+    "sekvence cox1": "ne",
+    "zaverecne_urceni": null
   },
   {
     "kod": "188C4",
@@ -151,7 +164,8 @@
     "rad": null,
     "celed": null,
     "fylogenetika": "ne – bez sekvence",
-    "sekvence cox1": "ne"
+    "sekvence cox1": "ne",
+    "zaverecne_urceni": null
   },
   {
     "kod": "188C5",
@@ -162,7 +176,8 @@
     "rad": null,
     "celed": null,
     "fylogenetika": "ne – bez sekvence",
-    "sekvence cox1": "ne"
+    "sekvence cox1": "ne",
+    "zaverecne_urceni": null
   },
   {
     "kod": "188D3",
@@ -173,7 +188,8 @@
     "rad": null,
     "celed": null,
     "fylogenetika": "ne – bez sekvence",
-    "sekvence cox1": "ne"
+    "sekvence cox1": "ne",
+    "zaverecne_urceni": null
   },
   {
     "kod": "188D4",
@@ -184,7 +200,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Melanostomias sp."
   },
   {
     "kod": "188D5",
@@ -195,7 +212,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Melanostomias sp."
   },
   {
     "kod": "188D6",
@@ -206,7 +224,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Melanostomias sp."
   },
   {
     "kod": "188D7",
@@ -217,7 +236,8 @@
     "rad": null,
     "celed": null,
     "fylogenetika": "ne – bez sekvence",
-    "sekvence cox1": "ne"
+    "sekvence cox1": "ne",
+    "zaverecne_urceni": null
   },
   {
     "kod": "188D8",
@@ -228,7 +248,8 @@
     "rad": null,
     "celed": null,
     "fylogenetika": "ne – bez sekvence",
-    "sekvence cox1": "ne"
+    "sekvence cox1": "ne",
+    "zaverecne_urceni": null
   },
   {
     "kod": "188D9",
@@ -239,7 +260,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Melanostomias sp."
   },
   {
     "kod": "188E1",
@@ -250,7 +272,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Melanostomias sp."
   },
   {
     "kod": "188E2",
@@ -261,7 +284,8 @@
     "rad": null,
     "celed": null,
     "fylogenetika": "ne – bez sekvence",
-    "sekvence cox1": "ne"
+    "sekvence cox1": "ne",
+    "zaverecne_urceni": null
   },
   {
     "kod": "188E3",
@@ -272,7 +296,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Melanostomias tentaculatus"
   },
   {
     "kod": "188E4",
@@ -283,7 +308,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Melanostomias tentaculatus"
   },
   {
     "kod": "188E5",
@@ -294,7 +320,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Bathophilus sp."
   },
   {
     "kod": "188E6",
@@ -305,7 +332,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Melanostomias sp."
   },
   {
     "kod": "188E7",
@@ -316,7 +344,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Melanostomias sp."
   },
   {
     "kod": "188E8",
@@ -327,7 +356,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Astronesthes gemmifer"
   },
   {
     "kod": "188E9",
@@ -338,7 +368,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Bathophilus brevis"
   },
   {
     "kod": "188F1",
@@ -349,7 +380,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Melanostomias tentaculatus"
   },
   {
     "kod": "189A3",
@@ -360,7 +392,8 @@
     "rad": "Stomiiformes",
     "celed": "Gonostomatidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Gonostoma denudatum"
   },
   {
     "kod": "189A4",
@@ -371,7 +404,8 @@
     "rad": "Myctophiformes",
     "celed": "Myctophidae",
     "fylogenetika": "ne – jiný řád",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Lampanyctus festivus"
   },
   {
     "kod": "189A5",
@@ -382,7 +416,8 @@
     "rad": "Stomiiformes",
     "celed": "Gonostomatidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Gonostoma denudatum"
   },
   {
     "kod": "189A6",
@@ -393,7 +428,8 @@
     "rad": "Stomiiformes",
     "celed": "Gonostomatidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Gonostoma denudatum"
   },
   {
     "kod": "190B3",
@@ -404,7 +440,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Chauliodus sp."
   },
   {
     "kod": "190B4",
@@ -415,7 +452,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Chauliodus sloani"
   },
   {
     "kod": "190B5",
@@ -426,7 +464,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Chauliodus sloani"
   },
   {
     "kod": "190B6",
@@ -437,7 +476,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Chauliodus sp."
   },
   {
     "kod": "190B7",
@@ -448,7 +488,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Chauliodus danae"
   },
   {
     "kod": "190B8",
@@ -459,7 +500,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Chauliodus sloani"
   },
   {
     "kod": "190B9",
@@ -470,7 +512,8 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Chauliodus sloani"
   },
   {
     "kod": "190C1",
@@ -481,6 +524,7 @@
     "rad": "Stomiiformes",
     "celed": "Stomiidae",
     "fylogenetika": "ano",
-    "sekvence cox1": "ano"
+    "sekvence cox1": "ano",
+    "zaverecne_urceni": "Chauliodus sloani"
   }
 ]
