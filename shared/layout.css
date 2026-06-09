@@ -201,8 +201,10 @@ body {
 /* ===== Main content ===== */
 .site-main {
   flex: 1;
-  overflow-y: auto;
+  overflow: hidden;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ===== Footer ===== */
@@ -230,6 +232,7 @@ body {
 
   .site-main {
     overflow: visible;
+    display: block;
   }
 
   .hamburger { display: flex; }
