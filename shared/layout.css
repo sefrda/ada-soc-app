@@ -201,8 +201,13 @@ body {
 /* ===== Main content ===== */
 .site-main {
   flex: 1;
-  overflow: hidden;
+  overflow-y: auto;
   min-width: 0;
+}
+
+/* Fill layout – pro stránky s tabulkou/stromem (přidává si stránka sama) */
+.site-main.fill {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
