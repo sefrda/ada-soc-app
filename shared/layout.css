@@ -239,19 +239,8 @@ body {
 
 /* ===== Mobile (≤ 768px) ===== */
 @media (max-width: 768px) {
-  body {
-    height: auto;
-    overflow: visible;
-  }
-
   .page-body {
-    overflow: visible;
     flex-direction: column;
-  }
-
-  .site-main {
-    overflow: visible;
-    display: block;
   }
 
   .hamburger { display: flex; }
