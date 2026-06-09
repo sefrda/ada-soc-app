@@ -68,6 +68,24 @@ body {
   overflow: hidden;
 }
 
+/* ===== Home button (mobile only) ===== */
+.btn-home {
+  display: none;
+  color: #a8c4e8;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 4px 0;
+}
+
+.btn-home:hover { color: #ffffff; }
+
+@media (max-width: 768px) {
+  .btn-home { display: inline; }
+  .btn-home.hidden { display: none; }
+}
+
 /* ===== Hamburger ===== */
 .hamburger {
   display: none;

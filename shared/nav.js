@@ -16,6 +16,11 @@
 
   // Highlight active link
   const page = location.pathname.split('/').pop() || 'index.html';
+
+  // Hide home button on index page
+  if (page === 'index.html' || page === '') {
+    document.getElementById('btn-home')?.classList.add('hidden');
+  }
   document.querySelectorAll('.nav-link[data-page]').forEach(a => {
     if (a.dataset.page === page) a.classList.add('active');
   });
