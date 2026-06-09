@@ -194,7 +194,7 @@
   <main class="site-main">
 
     <div class="search-bar">
-      <h2>🔬 Výsledky analýzy</h2>
+      <h2>🔬 Výsledky</h2>
       <div class="controls">
         <input type="text" id="search" placeholder="Hledat (kód, druh, čeleď…)">
         <select id="filter-rad"><option value="">Všechny řády</option></select>
@@ -202,6 +202,9 @@
           <option value="">Vše – fylogenetika</option>
           <option value="ano">Zařazen: ano</option>
           <option value="ne">Zařazen: ne</option>
+        </select>
+        <select id="filter-zaverecne">
+          <option value="">Vše – záv. určení</option>
         </select>
       </div>
       <p class="count" id="count"></p>
@@ -214,7 +217,7 @@
             <th>Foto</th>
             <th>Kód</th>
             <th>Závěrečné určení</th>
-            <th>Určení (BLAST)</th>
+            <th>SHODA BLAST</th>
             <th>Podobnost</th>
             <th>Řád</th>
             <th>Čeleď</th>
@@ -262,6 +265,10 @@
     const rady = [...new Set(d.map(r => r.rad).filter(Boolean))].sort();
     const sel = document.getElementById('filter-rad');
     rady.forEach(r => { const o = document.createElement('option'); o.value = r; o.textContent = r; sel.appendChild(o); });
+
+    const druhy = [...new Set(d.map(r => r.zaverecne_urceni).filter(Boolean))].sort();
+    const selZ = document.getElementById('filter-zaverecne');
+    druhy.forEach(v => { const o = document.createElement('option'); o.value = v; o.textContent = v; selZ.appendChild(o); });
     render();
   });
 
@@ -285,15 +292,17 @@
   }
 
   function render() {
-    const q    = document.getElementById('search').value.toLowerCase();
-    const rad  = document.getElementById('filter-rad').value;
-    const fylo = document.getElementById('filter-fylo').value;
+    const q        = document.getElementById('search').value.toLowerCase();
+    const rad      = document.getElementById('filter-rad').value;
+    const fylo     = document.getElementById('filter-fylo').value;
+    const zaverecne = document.getElementById('filter-zaverecne').value;
 
     filtered = data.filter(r => {
       if (rad  && r.rad !== rad) return false;
       if (fylo === 'ano' && r.fylogenetika !== 'ano') return false;
       if (fylo === 'ne'  && r.fylogenetika === 'ano') return false;
-      if (q && ![r.kod, r.blast_urceni, r.morfologie, r.rad, r.celed].join(' ').toLowerCase().includes(q)) return false;
+      if (zaverecne && r.zaverecne_urceni !== zaverecne) return false;
+      if (q && ![r.kod, r.blast_urceni, r.morfologie, r.rad, r.celed, r.zaverecne_urceni].join(' ').toLowerCase().includes(q)) return false;
       return true;
     });
 
@@ -345,6 +354,7 @@
   document.getElementById('search').addEventListener('input', render);
   document.getElementById('filter-rad').addEventListener('change', render);
   document.getElementById('filter-fylo').addEventListener('change', render);
+  document.getElementById('filter-zaverecne').addEventListener('change', render);
 </script>
 </body>
 </html>
