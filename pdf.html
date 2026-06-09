@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celá práce – Stomiiformes</title>
+  <link rel="stylesheet" href="shared/layout.css">
+  <style>
+    .pdf-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #163a74;
+      border-bottom: 1px solid #1f4d96;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .pdf-toolbar h2 {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .pdf-download {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      background: #0d2255;
+      border: 1px solid #eb9b1f;
+      border-radius: 6px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .pdf-download:hover { background: #163a74; }
+
+    .pdf-frame {
+      width: 100%;
+      height: calc(100% - 49px);
+      border: none;
+      display: block;
+    }
+
+    /* On mobile iframe height needs to fill viewport */
+    @media (max-width: 768px) {
+      .pdf-frame {
+        height: 80vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<div class="page-body">
+  <div id="nav-placeholder"></div>
+
+  <main class="site-main">
+
+    <div class="pdf-toolbar">
+      <h2>📄 Celá práce</h2>
+      <a class="pdf-download" href="SOC_ASefrhansova_2026.pdf" download>
+        ⬇ Stáhnout PDF
+      </a>
+    </div>
+
+    <iframe
+      class="pdf-frame"
+      src="SOC_ASefrhansova_2026.pdf"
+      title="SOČ – Adéla Šefrhansová">
+    </iframe>
+
+  </main>
+</div>
+
+<div id="footer-placeholder"></div>
+
+<script src="shared/nav.js"></script>
+</body>
+</html>
