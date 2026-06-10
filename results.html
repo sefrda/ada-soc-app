@@ -60,16 +60,16 @@
 
     .filter-badge.visible { display: inline; }
 
-    @media (max-width: 768px) {
-      .filter-toggle { display: flex; }
-      .controls { display: none; }
-      .controls.open { display: flex; }
-    }
-
     .controls {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .filter-toggle { display: flex; }
+      .controls { display: none; }
+      .controls.open { display: flex; }
     }
 
     input[type="text"] {
