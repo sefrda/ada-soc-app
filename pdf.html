@@ -57,23 +57,38 @@
       min-height: 0;
     }
 
-    /* Mobile: iframe as preview only */
+    /* Mobile: hide iframe, show PNG preview */
+    .pdf-preview-img {
+      display: none;
+    }
+
     .pdf-mobile-note {
       display: none;
     }
 
     @media (max-width: 768px) {
-      .pdf-frame {
-        flex: none;
-        height: 55vh;
+      .pdf-frame { display: none; }
+
+      /* Allow scrolling on mobile */
+      .site-main.fill {
+        overflow-y: auto !important;
+        display: block !important;
       }
+
+      .pdf-preview-img {
+        display: block;
+        width: calc(100% - 32px);
+        margin: 0 16px 16px;
+        border-radius: 4px;
+        order: 2;
+      }
+
       .pdf-mobile-note {
         display: block;
-        text-align: center;
-        padding: 12px 16px;
+        padding: 12px 16px 8px;
         font-size: 12px;
         color: #4a6a9a;
-        border-top: 1px solid #1f4d96;
+        order: 1;
       }
     }
   </style>
@@ -108,6 +123,11 @@
     <p class="pdf-mobile-note">
       Náhled 1. stránky – pro čtení celé práce použij tlačítko <strong>Otevřít v prohlížeči</strong> výše.
     </p>
+
+    <img
+      class="pdf-preview-img"
+      src="SOC_ASefrhansova_2026_1page.png"
+      alt="Náhled 1. stránky práce">
 
   </main>
 </div>
