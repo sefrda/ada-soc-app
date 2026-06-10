@@ -17,6 +17,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
+      flex-wrap: wrap;
     }
 
     .pdf-toolbar h2 {
@@ -24,7 +25,13 @@
       font-weight: 700;
     }
 
-    .pdf-download {
+    .pdf-buttons {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .pdf-btn {
       display: flex;
       align-items: center;
       gap: 6px;
@@ -37,22 +44,36 @@
       font-size: 13px;
       font-weight: 600;
       white-space: nowrap;
-      flex-shrink: 0;
     }
 
-    .pdf-download:hover { background: #163a74; }
+    .pdf-btn:hover { background: #163a74; }
 
+    /* Desktop: iframe fills remaining space */
     .pdf-frame {
       width: 100%;
-      height: calc(100% - 49px);
+      flex: 1;
       border: none;
       display: block;
+      min-height: 0;
     }
 
-    /* On mobile iframe height needs to fill viewport */
+    /* Mobile: iframe as preview only */
+    .pdf-mobile-note {
+      display: none;
+    }
+
     @media (max-width: 768px) {
       .pdf-frame {
-        height: 80vh;
+        flex: none;
+        height: 55vh;
+      }
+      .pdf-mobile-note {
+        display: block;
+        text-align: center;
+        padding: 12px 16px;
+        font-size: 12px;
+        color: #4a6a9a;
+        border-top: 1px solid #1f4d96;
       }
     }
   </style>
@@ -64,13 +85,18 @@
 <div class="page-body">
   <div id="nav-placeholder"></div>
 
-  <main class="site-main">
+  <main class="site-main fill">
 
     <div class="pdf-toolbar">
       <h2>📄 Celá práce</h2>
-      <a class="pdf-download" href="SOC_ASefrhansova_2026.pdf" download>
-        ⬇ Stáhnout PDF
-      </a>
+      <div class="pdf-buttons">
+        <a class="pdf-btn" href="SOC_ASefrhansova_2026.pdf" target="_blank" rel="noopener">
+          🔗 Otevřít v prohlížeči
+        </a>
+        <a class="pdf-btn" href="SOC_ASefrhansova_2026.pdf" download>
+          ⬇ Stáhnout PDF
+        </a>
+      </div>
     </div>
 
     <iframe
@@ -78,6 +104,10 @@
       src="SOC_ASefrhansova_2026.pdf"
       title="SOČ – Adéla Šefrhansová">
     </iframe>
+
+    <p class="pdf-mobile-note">
+      Náhled 1. stránky – pro čtení celé práce použij tlačítko <strong>Otevřít v prohlížeči</strong> výše.
+    </p>
 
   </main>
 </div>
